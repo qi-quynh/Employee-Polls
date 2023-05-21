@@ -1,0 +1,260 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navbar should render the component 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="container"
+      >
+        <div
+          class="navbar-nav"
+        >
+          <ul>
+            <li
+              style="display: inline;"
+            >
+              <a
+                class="item non"
+                href="/"
+              >
+                Home
+              </a>
+            </li>
+            <li
+              style="display: inline;"
+            >
+              <a
+                class="item non"
+                href="/leaderboard"
+              >
+                Leaderboard
+              </a>
+            </li>
+            <li
+              style="display: inline;"
+            >
+              <a
+                class="item non"
+                href="/add"
+              >
+                New Poll
+              </a>
+            </li>
+          </ul>
+           
+        </div>
+        <div>
+          <h1
+            class="text-3xl font-bold mt-9"
+            data-testid="login-heading"
+          >
+            Login
+          </h1>
+          <form
+            class="login"
+          >
+            <div>
+              <label
+                for="username"
+              >
+                Username
+              </label>
+              <div>
+                <input
+                  class="input"
+                  data-testid="username"
+                  id="username"
+                  name="username"
+                  size="30"
+                  type="text"
+                  value="sarahedo"
+                />
+              </div>
+            </div>
+            <div>
+              <label
+                for="password"
+              >
+                Password
+              </label>
+              <div>
+                <input
+                  class="input"
+                  data-testid="password"
+                  id="password"
+                  name="password"
+                  size="30"
+                  type="password"
+                  value="password123"
+                />
+              </div>
+            </div>
+            <div>
+              <button
+                class="button"
+                data-testid="submit"
+                type="submit"
+              >
+                Login
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="container"
+    >
+      <div
+        class="navbar-nav"
+      >
+        <ul>
+          <li
+            style="display: inline;"
+          >
+            <a
+              class="item non"
+              href="/"
+            >
+              Home
+            </a>
+          </li>
+          <li
+            style="display: inline;"
+          >
+            <a
+              class="item non"
+              href="/leaderboard"
+            >
+              Leaderboard
+            </a>
+          </li>
+          <li
+            style="display: inline;"
+          >
+            <a
+              class="item non"
+              href="/add"
+            >
+              New Poll
+            </a>
+          </li>
+        </ul>
+         
+      </div>
+      <div>
+        <h1
+          class="text-3xl font-bold mt-9"
+          data-testid="login-heading"
+        >
+          Login
+        </h1>
+        <form
+          class="login"
+        >
+          <div>
+            <label
+              for="username"
+            >
+              Username
+            </label>
+            <div>
+              <input
+                class="input"
+                data-testid="username"
+                id="username"
+                name="username"
+                size="30"
+                type="text"
+                value="sarahedo"
+              />
+            </div>
+          </div>
+          <div>
+            <label
+              for="password"
+            >
+              Password
+            </label>
+            <div>
+              <input
+                class="input"
+                data-testid="password"
+                id="password"
+                name="password"
+                size="30"
+                type="password"
+                value="password123"
+              />
+            </div>
+          </div>
+          <div>
+            <button
+              class="button"
+              data-testid="submit"
+              type="submit"
+            >
+              Login
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
