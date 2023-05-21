@@ -11,7 +11,7 @@ const Detail = (props) => {
   const isNoAnswered = !selectOne && !selectTwo;
 
   return (
-    <div className="poll-container">
+    <div className="result-container">
       {isNoAnswered ? <NoAnswer poll={poll} /> : <HaveAnswered poll={poll} />}
     </div>
   );

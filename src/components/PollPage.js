@@ -4,22 +4,26 @@ import Detail from "./Detail";
 import Error404 from "./Error404";
 
 const PollPage = (props) => {
-  const { idsArr } = props;
+  const { questionsKey } = props;
 
   const { question_id } = useParams();
-  const id = question_id.replace(":question_", "");
+  const questionId = question_id.replace(":question_", "");
 
   return (
-    <div className="poll-page">
-      {idsArr.includes(id) ? <Detail id={id} /> : <Error404 page="poll" />}
+    <div className="result-page">
+      {questionsKey.includes(questionId) ? (
+        <Detail id={questionId} />
+      ) : (
+        <Error404 page="poll" />
+      )}
     </div>
   );
 };
 
 const mapStateToProps = ({ questions }) => {
-  const idsArr = Object.keys(questions);
+  const questionsKey = Object.keys(questions);
   return {
-    idsArr,
+    questionsKey,
   };
 };
 

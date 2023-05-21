@@ -26,10 +26,10 @@ const LeaderBoard = (props) => {
 
   const sortedList = usersList.sort((a, b) => b.sum - a.sum);
   return (
-    <div className="leaderboard">
-      <h1 className="leaderboard-h1"> Leaderboard </h1>
+    <div className="charts">
+      <h1 className="charts-h1"> Leaderboard </h1>
       <div></div>
-      <ul className="leaderboard-body">
+      <ul className="charts-body">
         {sortedList.map((user) => {
           return (
             <li key={user.id}>

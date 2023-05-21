@@ -226,6 +226,9 @@ body {
 	padding-top: 15px;
 }
 
+.result-page {
+	padding-top: 100px;
+}
 .result-right {
 	padding: 15px;
 	margin: 15px;
@@ -236,13 +239,6 @@ body {
 	font-size: 13px;
 }
 
-/* one poll by id OR not found */
-
-.poll-page {
-	padding-top: 90px;
-}
-
-/* not found */
 
 .not-found {
 	color: rgb(60, 60, 102);
@@ -279,22 +275,21 @@ body {
 	padding-top: 90px;
 }
 
-
-.leaderboard {
+.charts {
 	text-align: center;
 	padding-top: 70px;
 	color: rgb(60, 60, 102);
 }
 
-.leaderboard ul {
+.charts ul {
 	list-style: none;
 }
 
-.leaderboard-h1 {
+.charts-h1 {
 	padding-left: 30px;
 	padding-top: 15px;
 }
-.leaderboard-body{
+.charts-body{
 	text-align: center;
 }
 
