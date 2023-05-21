@@ -23,15 +23,36 @@ const Home = (props) => {
       !q.optionTwo.votes.includes(authedUser)
   );
 
-  const [questionsNoAnswer, setQuestionsNoAnswer] = useState(noAnswer);
-  const [questionsHaveAnswer, setQuestionsHaveAnswer] = useState(haveAnswered);
+  const [display, setDisplay] = useState(noAnswer);
+  const [isDisplay, setIsDisplay] = useState(true);
 
+  const showHaveQuestion = () => {
+    setDisplay(haveAnswered);
+    setIsDisplay(false);
+  };
+  const showNoQuestion = () => {
+    setDisplay(noAnswer);
+    setIsDisplay(true);
+  };
   return (
     <div className="home">
-      <div>
-        <h1 className="h1-home">New Question</h1>
-        {questionsNoAnswer.length > 0 ? (
-          questionsNoAnswer.map((q) => (
+      <h1 className="dashboard-heading">
+        <button
+          className={isDisplay ? "button active" : "button"}
+          onClick={showNoQuestion}
+        >
+          Unanswered
+        </button>
+        <button
+          className={isDisplay ? "button" : "button active"}
+          onClick={showHaveQuestion}
+        >
+          Answered
+        </button>
+      </h1>
+      <ul>
+        {display.length > 0 ? (
+          display.map((q) => (
             <li key={q.id}>
               <Link to={`/questions/:question_${q.id}`} className="none">
                 <Detail id={q.id} />
@@ -39,24 +60,9 @@ const Home = (props) => {
             </li>
           ))
         ) : (
-          <div>no available</div>
+          <div>no value</div>
         )}
-      </div>
-
-      <div>
-        <h1 className="h1-home">Done</h1>
-        {questionsHaveAnswer.length > 0 ? (
-          questionsHaveAnswer.map((q) => (
-            <li key={q.id}>
-              <Link to={`/questions/:question_${q.id}`} className="none">
-                <Detail id={q.id} />
-              </Link>
-            </li>
-          ))
-        ) : (
-          <div className="no-avai">no available</div>
-        )}
-      </div>
+      </ul>
     </div>
   );
 };
