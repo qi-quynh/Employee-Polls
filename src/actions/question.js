@@ -45,11 +45,13 @@ export function handleAddAnswer({ authedUser, qid, answer }) {
 
 export function handleAddQuestion(question) {
   return (dispatch) => {
+    dispatch(showLoading());
     return _saveQuestion(question)
       .then((res) => {
         dispatch(addQuestion(res));
         dispatch(updateQuestionsOfUser(res));
       })
+      .then(() => dispatch(hideLoading()))
       .catch((e) => console.log("Error from handleSaveQuestion: ", e));
   };
 }
