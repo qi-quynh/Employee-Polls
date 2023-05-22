@@ -8,8 +8,8 @@ const Card = (props) => {
         <p>{name}</p>
       </div>
       <div className="card-right">
-        <p>Questions: {questionLength}</p>
-        <p>Answers: {answerLength}</p>
+        <p>Number of Questions - {questionLength}</p>
+        <p>Number of Answers - {answerLength}</p>
       </div>
     </div>
   );

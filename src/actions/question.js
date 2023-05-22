@@ -30,7 +30,7 @@ function addQuestion(question) {
 
 export function handleAddAnswer({ authedUser, qid, answer }) {
   return (dispatch) => {
-    dispatch(showLoading);
+    dispatch(showLoading());
     return _saveQuestionAnswer({
       authedUser,
       qid,

@@ -9,7 +9,7 @@ function addAnswer(state = {}, action) {
   const { answers } = state;
   return {
     ...state,
-    answer: {
+    answers: {
       ...answers,
       [qid]: answer,
     },

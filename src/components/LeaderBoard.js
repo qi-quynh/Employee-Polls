@@ -2,9 +2,9 @@ import { connect } from "react-redux";
 import Card from "./Card";
 
 const LeaderBoard = (props) => {
-  const { users, usernames } = props;
+  const { users, userIds } = props;
 
-  const objectNumber = (user, answerLength, questionLength, sum) => {
+  const object = (user, answerLength, questionLength, sum) => {
     return {
       ...user,
       answerLength,
@@ -14,8 +14,8 @@ const LeaderBoard = (props) => {
   };
 
   let userList = [];
-  for (let i = 0; i < usernames.length; i++) {
-    const user = users[usernames[i]];
+  for (let i = 0; i < userIds.length; i++) {
+    const user = users[userIds[i]];
 
     const { questions, answers } = user;
 
@@ -23,7 +23,7 @@ const LeaderBoard = (props) => {
     const answerLength = Object.keys(answers).length;
     const sum = answerLength + questionLength;
 
-    const member = objectNumber(user, answerLength, questionLength, sum);
+    const member = object(user, answerLength, questionLength, sum);
     userList.push(member);
   }
   const result = userList.sort((a, b) => b.sum - a.sum);
@@ -50,9 +50,9 @@ const LeaderBoard = (props) => {
 };
 
 const mapStateToProps = ({ users }) => {
-  const usernames = Object.keys(users);
+  const userIds = Object.keys(users);
 
-  return { users, usernames };
+  return { users, userIds };
 };
 
 export default connect(mapStateToProps)(LeaderBoard);
