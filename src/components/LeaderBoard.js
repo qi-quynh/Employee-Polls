@@ -2,42 +2,44 @@ import { connect } from "react-redux";
 import Card from "./Card";
 
 const LeaderBoard = (props) => {
-  const { users, userIds } = props;
+  const { users, usernames } = props;
 
-  const addToUser = (user, answersLength, questionsLength, total) => {
+  const objectNumber = (user, answerLength, questionLength, sum) => {
     return {
       ...user,
-      answersLength,
-      questionsLength,
-      total,
+      answerLength,
+      questionLength,
+      sum,
     };
   };
 
-  let usersList = [];
-  for (const element of userIds) {
-    const user = users[element];
-    const { questions, answers } = user;
-    const questionsLength = questions.length;
-    const answersLength = Object.keys(answers).length;
-    const total = answersLength + questionsLength;
-    const information = addToUser(user, answersLength, questionsLength, total);
-    usersList.push(information);
-  }
+  let userList = [];
+  for (let i = 0; i < usernames.length; i++) {
+    const user = users[usernames[i]];
 
-  const sortedList = usersList.sort((a, b) => b.sum - a.sum);
+    const { questions, answers } = user;
+
+    const questionLength = questions.length;
+    const answerLength = Object.keys(answers).length;
+    const sum = answerLength + questionLength;
+
+    const member = objectNumber(user, answerLength, questionLength, sum);
+    userList.push(member);
+  }
+  const result = userList.sort((a, b) => b.sum - a.sum);
   return (
     <div className="charts">
       <h1 className="charts-h1"> Leaderboard </h1>
       <div></div>
       <ul className="charts-body">
-        {sortedList.map((user) => {
+        {result.map((u) => {
           return (
-            <li key={user.id}>
+            <li key={u.id}>
               <Card
-                answersLength={user.answersLength}
-                questionsLength={user.questionsLength}
-                avatar={user.avatarURL}
-                name={user.name}
+                answerLength={u.answerLength}
+                questionLength={u.questionLength}
+                avatar={u.avatarURL}
+                name={u.name}
               />
             </li>
           );
@@ -48,9 +50,9 @@ const LeaderBoard = (props) => {
 };
 
 const mapStateToProps = ({ users }) => {
-  const userIds = Object.keys(users);
+  const usernames = Object.keys(users);
 
-  return { users, userIds };
+  return { users, usernames };
 };
 
 export default connect(mapStateToProps)(LeaderBoard);
