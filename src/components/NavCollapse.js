@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 const NavCollapse = () => {
   return (
-    <ul sty>
+    <ul>
       <li style={{ display: "inline" }}>
         <Link to={"/"} className="item non">
           Home

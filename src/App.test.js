@@ -7,6 +7,7 @@ import { Provider } from "react-redux";
 import store from "./store";
 import { handleDataInitial } from "./actions/shared";
 import Login from "./components/login";
+import CreatePoll from "./components/CreatePoll";
 const {
   _saveQuestionAnswer,
   _saveQuestion,
@@ -90,35 +91,26 @@ describe("Save question with errors testing", () => {
     );
   });
 });
-describe("Login", () => {
-  it("should get correct input data and after click click input is refreshed", async () => {
-    await store.dispatch(handleDataInitial());
-    const element = render(
-      <Provider store={store}>
-        <BrowserRouter>
-          <Login />
-        </BrowserRouter>
-      </Provider>
+describe("Create new poll", () => {
+  test("button will be disabled if both 1st and 2nd cell are entered", async () => {
+    render(
+      <MemoryRouter>
+        <Provider store={store}>
+          <CreatePoll />
+        </Provider>
+      </MemoryRouter>
     );
-    const login = element.getByTestId("login-heading");
-    const username = element.getByTestId("username");
-    const password = element.getByTestId("password");
-    const submitButton = element.getByTestId("submit");
-    expect(login).toBeInTheDocument();
-    expect(username).toBeInTheDocument();
-    expect(password).toBeInTheDocument();
-    expect(submitButton).toBeInTheDocument();
 
-    fireEvent.change(username, { target: { value: "sarahedo" } });
-    fireEvent.change(password, {
-      target: { value: "password12345" },
-    });
-    expect(username.value).toBe("sarahedo");
-    expect(password.value).toBe("password12345");
-    fireEvent.click(submitButton);
-    expect(login).toBeInTheDocument();
-    expect(username.value).toBe("");
-    expect(password.value).toBe("");
+    const oEnter = screen.getByTestId("text-one-test");
+    const tEnter = screen.getByTestId("text-two-test");
+    const btn = screen.getByTestId("submit-test");
+
+    expect(btn).toHaveAttribute("disabled");
+
+    fireEvent.change(oEnter, { target: { value: "Would you like coffee" } });
+    fireEvent.change(tEnter, { target: { value: "Would you like juice" } });
+
+    expect(btn).not.toHaveAttribute("disabled");
   });
 });
 describe("UID", () => {

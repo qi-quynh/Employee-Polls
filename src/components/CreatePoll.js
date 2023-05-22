@@ -47,6 +47,7 @@ const CreatePoll = (props) => {
       <form className="create-form" onSubmit={handleSubmit}>
         <span className="create-display">Would you rather</span> <br />
         <input
+          data-testid="text-one-test"
           name="optionOneText"
           className="input"
           type="text"
@@ -57,6 +58,7 @@ const CreatePoll = (props) => {
         or <br />
         <input
           name="optionTwoText"
+          data-testid="text-two-test"
           className="input"
           size="70"
           type="text"
@@ -65,7 +67,11 @@ const CreatePoll = (props) => {
         />
         ?
         <br />
-        <button disabled={isDisabled} className="button-create">
+        <button
+          disabled={isDisabled}
+          className="button-create"
+          data-testid="submit-test"
+        >
           Create
         </button>
       </form>
