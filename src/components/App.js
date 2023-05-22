@@ -15,7 +15,7 @@ const App = (props) => {
   const { isLogin } = props;
   useEffect(() => {
     props.dispatch(handleDataInitial());
-  }, [isLogin]);
+  }, [isLogin, props]);
   return (
     <Fragment>
       <div className="container">

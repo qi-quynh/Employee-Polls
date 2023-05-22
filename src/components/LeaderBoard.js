@@ -16,9 +16,7 @@ const LeaderBoard = (props) => {
   let userList = [];
   for (let i = 0; i < userIds.length; i++) {
     const user = users[userIds[i]];
-
     const { questions, answers } = user;
-
     const questionLength = questions.length;
     const answerLength = Object.keys(answers).length;
     const sum = answerLength + questionLength;
